@@ -1,0 +1,109 @@
+<?php
+
+$title = $this->title;
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title><?php echo $title ;?></title>
+
+	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>assets/bootstrapv3/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL ?>assets/css/webarch.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL ?>assets/css/jquery.scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL ?>assets/css/zebra_pagination.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>assets/plugin/editable/css/bootstrap-editable.css">
+
+	<link rel="stylesheet" type="text/css" href="<?php echo URL; ?>assets/plugin/TE/jquery-te-1.4.0.css">
+	
+	
+<script src="<?php echo URL; ?>assets\js\jquery-1.11.3.min.js"></script>
+<script src="<?php echo URL; ?>assets\js\jquery.form.js"></script>
+<script src="<?php echo URL; ?>assets\bootstrapv3\js\bootstrap.min.js"></script>
+<script src="<?php echo URL; ?>assets\js\jquery.validate.min.js"></script>
+<script src="<?php echo URL; ?>assets\js\jquery.scrollbar.min.js"></script>
+<script src="<?php echo URL; ?>assets\js\webarch.js"></script>
+<script src="<?php echo URL; ?>assets\js\jquery.autocomplete.min.js"></script>
+
+
+<script src="<?php echo URL ?>assets/plugin/editable/js/bootstrap-editable.min.js"></script>
+
+<script src="<?php echo URL ?>assets/plugin/TE/jquery-te-1.4.0.min.js"></script>
+
+<script src="<?php echo URL; ?>assets\js\script.js"></script>
+
+
+</head>
+
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+	<!-- BEGIN BODY -->
+	<body class="">
+		<!-- BEGIN HEADER -->
+		<div class="header navbar navbar-inverse ">
+			<!-- BEGIN TOP NAVIGATION BAR -->
+			<div class="navbar-inner">
+				<div class="header-seperation">
+					<ul class="nav pull-left notifcation-center visible-xs visible-sm">
+						<li class="dropdown">
+							<a href="#main-menu" data-webarch="toggle-left-side">
+								<div class="iconset top-menu-toggle-white"></div>
+							</a>
+						</li>
+					</ul>
+					<!-- BEGIN LOGO -->
+				<!-- <a href="http://localhost/platinumhealth/platinumhealth/" style="display: inline-block; width: 140px; ">
+					<img src="http://localhost/platinumhealth/platinumhealth/assets/img/PlatinumHealthSmall1.png" class="logo" alt="platinum health"  data-src="http://localhost/platinumhealth/platinumhealth/assets/img/PlatinumHealthSmall1.png" data-src-retina="http://localhost/platinumhealth/platinumhealth/assets/img/PlatinumHealthSmall1.png" style="width: 100%;" />
+				</a> -->
+				<!-- END LOGO -->
+
+			</div>
+			<!-- END RESPONSIVE MENU TOGGLER -->
+
+			<!-- END TOP NAVIGATION MENU -->
+		</div>
+		<!-- END TOP NAVIGATION BAR -->
+	</div>
+	<!-- END HEADER --><!-- BEGIN SIDEBAR -->
+
+	<div class="page-sidebar " id="main-menu">
+	<!-- BEGIN MINI-PROFILE -->
+	<div class="page-sidebar-wrapper " id="main-menu-wrapper">
+
+		<!-- END MINI-PROFILE -->
+		<!-- BEGIN SIDEBAR MENU -->
+		<p class="menu-title">BROWSE <span class="pull-right"><a href="javascript:;"><i class="fa fa-refresh"></i></a></span></p>
+
+		<ul>
+			<li class="start "> <a href="<?php echo URL; ?>" title="Home"> <i class="icon-custom-home"></i> <span class="title">Home</span> <span class="selected"></span>  </a></li>
+			
+			<?php 
+			$menues = array(
+				array("url" => "http","title" => "List Of http"),
+				array("url" => "http/create","title" => "Create http"),
+				array("url" => "team","title" => "Cities List"),
+				array("url" => "president","title" => "President Of India"),				
+				
+				);
+			if (Help::isAdminLogedin()){ 
+			foreach ($menues as $key => $value) {
+			 	echo '<li class="start "> 
+					<a href="' . URL . $value ['url'] . '"> 
+					<i class="icon-custom-home" ></i>
+					<span class="title">'.$value ['title'].'</span> 
+					<span>						
+					</span>  
+					</a>
+				</li>';
+			} ?>
+			
+			<!-- <li class="start "> <a href="<?php echo URL; ?>president/create"> <i class="icon-custom-home" ></i><span class="title">Create President</span> <span class="selected"></span>  </a></li> -->
+			<?php 
+			}
+			?>
+			
+		</ul>
+	</div>
+</div>
